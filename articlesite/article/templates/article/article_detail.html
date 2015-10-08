@@ -1,0 +1,24 @@
+{% extends "article/base.html" %}
+
+{% block content %}
+    <div class="container">
+        {% if article.pub_date %}
+            <div class="date">
+               <p class="label label-primary">Published: {{ article.pub_date }}</p>
+            </div>
+        {% endif %}
+        <h1>{{ article.title }}</h1>
+        <div class="container">
+        <div class="col-xs-6 col-md-4">
+        <img src="{{ article.hero_img.url }}" height="300" width="300">
+        </div>
+        {% if article.opt_img %}
+        <div class="col-xs-6 col-md-4">
+        <img src="{{ article.opt_img.url }}" height="300" width="300">
+        </div>
+        {% endif %}	
+        </div>
+        <p>{{ article.body_txt|linebreaks }}</p>
+        <a class ="label label-info" href="{% url "article_cat_fetch" cat=article.article_cat %}">{{ article.article_cat }}</a>
+    </div>
+{% endblock %}

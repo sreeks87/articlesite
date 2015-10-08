@@ -1,0 +1,12 @@
+{% extends "article/base.html" %}
+{% load staticfiles %}
+	{% block content %}
+			{% for post in posts %}
+		    <div class="container">
+		        <!-- <p class="label label-primary">Published: {{ article.pub_date }}</p> -->
+		        <h1><a href="{% url "article_detail" pk=article.pk %}">{{ article.title }}</a></h1>
+		        <p>{{ article.body_txt|linebreaks|truncatechars:200 }}</p>
+		        <!-- <a href="{% url "article_detail" pk=article.pk %}">Read more</a> -->
+		    </div>
+		{% endfor %}
+	{% endblock %}

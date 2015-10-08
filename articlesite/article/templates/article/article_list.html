@@ -1,0 +1,69 @@
+{% extends "article/base.html" %}
+{% load staticfiles %}
+
+
+
+<!-- Carousel
+================================================== -->
+{%  block carousel %}
+<div id="myCarousel" class="carousel slide container">
+  <!-- Indicators -->
+
+  <ol class="carousel-indicators">
+
+    <!-- <li data-target="#myCarousel" data-slide-to=0 class="active"></li> -->
+  
+    <!-- <li data-target="#myCarousel" data-slide-to=1 ></li> -->
+ 
+  </ol>
+  <div class="carousel-inner">  
+
+<div class="carousel-inner" role="listbox">
+    {% for article in rand_art %}        
+        <div class="item{% if forloop.first %} active{% endif %}">                    
+              <img src="{{article.hero_img.url}}" alt="slider">
+              <div class="carousel-caption capt">
+                  <h1><a href="{% url "article_detail" pk=article.pk %}">{{ article.title }}</a></h1>
+              </div>
+        </div>
+    {%endfor%}
+</div>
+
+  <a class="left carousel-control" href="" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="" data-slide="next">
+    <span class="icon-next"></span>	
+  </a>  
+</div>
+
+</div>
+<!-- /.carousel -->
+{% endblock %}
+	{% block content %}
+
+		{% for article in articles %}
+		    <div class="container">
+		        <p class="label label-primary">Published: {{ article.pub_date }}</p>
+		        <h1><a href="{% url "article_detail" pk=article.pk %}">{{ article.title }}</a></h1>
+		        <p>{{ article.body_txt|linebreaks|truncatechars:900 }}</p>
+		        <a href="{% url "article_detail" pk=article.pk %}">Read more</a>
+		    </div>
+		    </br>
+		    </br>
+		{% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if articles.has_previous %}
+            <p class="lead"><a href="?page={{ articles.previous_page_number }}">Newer</a></p>
+        {% endif %}	
+        {% if articles.has_next %}
+           <p class="lead"> <a href="?page={{ articles.next_page_number }}">Older</a></p>
+        {% endif %}
+    </span>
+</div>
+	{% endblock content %}
+
+
+
+

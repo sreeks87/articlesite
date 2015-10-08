@@ -1,0 +1,103 @@
+h1 a {
+    color: #FCA205;
+}
+body {
+    padding-left: 15px;
+}
+
+body {
+ padding-top:50px;
+}
+
+.navbar-bright {
+ background-color:#111155;
+ color:#fff;
+}
+
+.affix-top,.affix{
+ position: static;
+}
+
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+  	margin-top:30px;
+  	width:50px;
+  }
+  
+  #sidebar.affix {
+    position: fixed;
+    top:70px;
+    width:50px;
+  }
+}
+
+#sidebar li.active {
+  border:0 #eee solid;
+  border-right-width:5px;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+
+/*justifying div*/
+
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/*Carousel*/
+/* BOOTSTRAP 3.x GLOBAL STYLES
+-------------------------------------------------- */
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+
+/* Style for THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  background-color:#555;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+}
+
+
+
+.container { position:relative; padding:0 0 0 20px; }
+#sidebar {
+    position:relative;
+    top:0; bottom:0; left:0;
+    width:50px;
+}
+
+
+
+
+
+
