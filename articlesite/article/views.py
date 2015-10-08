@@ -42,7 +42,7 @@ def article_list(request):
 		return render(request, 'article/article_list.html', context,context_instance=RequestContext(request))
 	except Exception as e:
 		print (e)
-		context = {error:'Error occured!!!'}
+		context = {'error':'Error occured!!!'}
 		return render(request,'article/error.html',context)
 	
 
@@ -77,7 +77,7 @@ def article_cat_fetch(request,cat):
 		return render(request, 'article/article_category.html', context)
 	except Exception as e:
 		print (e)
-		context = {error:'Error occured!!!'}
+		context = {'error':'Error occured!!!'}
 		return render(request,'article/error.html',context)
 
 #Function to fetch random articles for carousel preview
@@ -157,5 +157,5 @@ def search_result(request):
 					return render(request,'article/article_search.html',context)
 	except Exception as e:
 		print(e)
-		context = {error:'Error occured!!!'}
+		context = {'error':'Error occured!!!'}
 		return render(request,'article/error.html',context)
